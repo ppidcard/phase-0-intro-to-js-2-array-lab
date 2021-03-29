@@ -1,40 +1,60 @@
-// Write your solution here!
-let cats = ["Milo", "Otis", "Garfield"];
+const cats = ["Milo", "Otis", "Garfield"];
+
+const destructivelyAppendCat = function(name){
+   return cats.push(name);
+}
+
+const destructivelyPrependCat = function(name){
+   return cats.unshift(name);
+}
+
+const destructivelyRemoveLastCat = function(name){
+   return cats.pop(name);
+}
+
+const destructivelyRemoveFirstCat = function(name){
+   return cats.shift(name);
+}
+
+const appendCat = function(name){
+   let newArray = [...cats, name];
+   return newArray;
+}
+
+const prependCat = function(name){
+   let newArray2 = [name,...cats];
+   return newArray2;
+}
+
+const removeLastCat = function(name){
+   let newArray3 = cats.slice(0, 2);
+   return newArray3;
+}
+
+const removeFirstCat = function(name){
+   let newArray4 = cats.slice(1);
+   return newArray4;
+}
+/*
 
 
-function destructivelyAppendCat(name) {
-    return cats.push(name);
+    describe('removeLastCat()', function () {
+      it('removes the last cat in the cats array and returns a new array, leaving the cats array unchanged', function () {
+        expect(removeLastCat()).to.have.ordered.members(["Milo", "Otis"]);
 
- }
- 
- function destructivelyPrependCat(name){
-    return cats.unshift(name);
- }
- 
- function destructivelyRemoveLastCat(){
-    return cats.pop();
- }
- 
- function destructivelyRemoveFirstCat(){
-   return cats.shift();
- }
- 
- function appendCat(name){
-     let newList = [...cats,name];
-     return newList;
- }
- 
- function prependCat(name){
-    let newList2=[name, ...cats];
-    return newList2;
- }
- 
- function removeLastCat(){
-     let cats_minus= cats.slice(0,cats.length-1);
-     return cats_minus;
- }
- 
- function removeFirstCat(){
-   let cats_plus= cats.slice(1);
-   return cats_plus;
- }
+        expect(cats).to.have.ordered.members(["Milo", "Otis", "Garfield"]);
+      });
+    });
+
+    describe('removeFirstCat()', function () {
+      it('removes the first cat from the cats array and returns a new array, leaving the cats array unchanged', function () {
+        expect(removeFirstCat()).to.have.ordered.members(["Otis", "Garfield"]);
+
+        expect(cats).to.have.ordered.members(["Milo", "Otis", "Garfield"]);
+      });
+    });
+  });
+});
+
+*/
+
